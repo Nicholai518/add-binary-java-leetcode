@@ -1,6 +1,7 @@
 public class Solution {
     public String addBinary(String a, String b) {
 
+        // used to build answer
         StringBuilder stringBuilder = new StringBuilder();
 
         // iterate from the back to front
@@ -14,16 +15,16 @@ public class Solution {
         // set carry = 1
         int carry = 0;
 
-        // a may be "longer" than b, or vice versa
+        // "a" may be "longer" than "b", or vice versa
         // if there is still an available index for either a or b, keep looping
-        while( i >= 0 || j >= 0 ){
-            // set some equal to carry which may exist from previous calculation
+        while (i >= 0 || j >= 0) {
+            // set sum equal to carry which may exist from previous calculation
             int sum = carry;
             // converts char to an int
-            if(i >= 0) {
+            if (i >= 0) {
                 sum += a.charAt(i) - '0';
             }
-            if(j >= 0){
+            if (j >= 0) {
                 sum += b.charAt(j) - '0';
             }
 
@@ -43,7 +44,7 @@ public class Solution {
         }
 
         // if there is a "carry" left, we need to append it
-        if(carry != 0){
+        if (carry != 0) {
             stringBuilder.append(carry);
         }
         // because append() adds to the END of string builder, our answer is backwards
